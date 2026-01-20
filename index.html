@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css">
+  <title>year-of-the-horse</title>
+</head>
+
+<body>
+  <div id="verticalContent" class="w-screen h-screen overflow-hidden flex items-center justify-center">
+    <div class="w-full h-full max-w-[614px] flex flex-col justify-center ">
+      <!-- enter -->
+      <div id="page-enter" class=" bg-gray-50 w-full h-full flex flex-col items-center justify-center">
+        <h1>首頁</h1>
+        <p>遊玩提示</p>
+        <button id="btn-start" class="my-btn">進入遊戲</button>
+      </div>
+      <!-- game -->
+      <div id="page-game" class=" bg-gray-50 w-full h-[50vh] flex flex-col items-center justify-between max-w-full">
+        <h1 class="z-10  text-xl">搖晃手機拍馬屁</h1>
+        <h3 class="z-10  text-4xl text-white" id="horse-title">碳吉碳到矽</h3>
+        <button class="z-10 my-btn" id="btn-result">決定馬屁話</button>
+        <img src="horse.png" alt="馬屁"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full z-0 pointer-events-none  ">
+      </div>
+      <!-- result -->
+      <div id="page-result" class=" bg-gray-50 w-full h-full flex flex-col items-center justify-center">
+        <h1>結果</h1>
+        <img src="" alt="">
+        <button id="btn-replay" class="my-btn">再玩一次</button>
+        <button id="btn-share" class="my-btn">分享</button>
+      </div>
+    </div>
+    <div id="horizontalContent" class="w-screen h-screen overflow-hidden hidden">
+      <h1>請至手機使用</h1>
+    </div>
+    <div id="result-image"
+      class="justify-center text-center absolute top-0 left-[-1080px] w-[1080px] h-[1920px]  pointer-events-none">
+      <h1 class="text-4xl font-bold" id="result-horse-title">碳吉碳到矽</h1>
+      <h2 class="text-xl">碳矽互動設計拍你馬屁</h2>
+      <img src="horse.png" alt="馬屁"
+        class="object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-0 pointer-events-none  ">
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
