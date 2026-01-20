@@ -4,6 +4,7 @@ import { ShakeDetector } from "../features/ShakeDetector";
 import { ResultGenerator } from "../features/ResultGenerator";
 import { copywritings } from "../data/copywritings";
 import { debugManager } from "../core/DebugManager";
+import { soundManager } from "./SoundManager";
 
 export class GameManager {
     private enterBtn: HTMLButtonElement;
@@ -44,6 +45,7 @@ export class GameManager {
 
     private startGame() {
         this.pageManager.showPage('game');
+        this.shakeDetector.stop()
         this.shakeDetector.start(() => this.onShake());
     }
 
@@ -87,16 +89,21 @@ export class GameManager {
 
     private bindEvents(): void {
         this.enterBtn.addEventListener('click', () => {
+            soundManager.playSFX('clickSound');
+            soundManager.playBGM();
             this.startGame();
         });
         this.resultBtn.addEventListener('click', () => {
+            soundManager.playSFX('clickSound');
             this.pageManager.showPage('result');
             this.generateResult();
         });
         this.replayBtn.addEventListener('click', () => {
+            soundManager.playSFX('clickSound');
             this.startGame();
         });
         this.shareBtn.addEventListener('click', () => {
+            soundManager.playSFX('clickSound');
             this.pageManager.showPage('result');
             this.shareResult();
         });
@@ -106,6 +113,7 @@ export class GameManager {
         debugManager.log('偵測到搖晃手機');
         console.log('搖晃手機');
 
+        soundManager.playSFX('whipSound');
         this.horseTitle.classList.remove('pop-animate');
         void this.horseTitle.offsetWidth; // Force reflow
 
